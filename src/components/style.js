@@ -3,6 +3,26 @@ import { tokens, modularScale } from "./tokens.js"
 import "./typekit.css"
 
 const Style = createGlobalStyle`
+  :root
+  {
+    --box-background-color: ${tokens.box.background.color.dark};
+    --box-border-color: ${tokens.box.border.color.dark};
+    --typography-base-color: ${tokens.typography.base.color.dark};
+    --typography-heading-color: ${tokens.typography.heading.color.dark};
+    --typography-anchor-background-color: ${tokens.typography.anchor.backgroundColor.dark};
+    --typography-anchor-color: ${tokens.typography.anchor.color.dark};
+
+    @media (prefers-color-scheme: light)
+    {
+      --box-background-color: ${tokens.box.background.color.light};
+      --box-border-color: ${tokens.box.border.color.light};
+      --typography-base-color: ${tokens.typography.base.color.light};
+      --typography-heading-color: ${tokens.typography.heading.color.light};
+      --typography-anchor-background-color: ${tokens.typography.anchor.backgroundColor.light};
+      --typography-anchor-color: ${tokens.typography.anchor.color.light};
+    }
+  }
+
   * 
   {
     box-sizing: border-box;
@@ -10,11 +30,11 @@ const Style = createGlobalStyle`
 
   html 
   {
-    border: solid 1vmax ${tokens.colors.base01};
+    border: solid 1vmax var(--box-border-color);
     font-family: ${tokens.typography.base.fontFamily};
     font-weight: ${tokens.typography.base.fontWeight};
-    background-color: ${tokens.colors.base03};
-    color: ${tokens.typography.base.color};
+    background-color: var(--box-background-color);
+    color: var(--typography-base-color);
     min-height: 100vh;
     padding: 8vw;
 
@@ -50,7 +70,7 @@ const Style = createGlobalStyle`
 
   h1 
   {
-    color: ${tokens.typography.heading.color};
+    color: var(--typography-heading-color);
     font-size: ${modularScale(7)};
     line-height: ${modularScale(12)};
     margin: 0 0 ${modularScale(6)} 0;
@@ -63,7 +83,7 @@ const Style = createGlobalStyle`
 
     em 
     {
-      color: ${tokens.typography.base.color};
+      color: var(--typography-base-color);
       font-size: ${modularScale(0)};
       font-style: normal;
       font-weight: ${tokens.typography.base.fontWeight};
@@ -78,12 +98,12 @@ const Style = createGlobalStyle`
 
   a 
   {
-    color: ${tokens.typography.anchor.color};
+    color: var(--typography-anchor-color);
     text-decoration: none;
 
     &:hover 
     {
-      background: ${tokens.typography.backgroundColor};
+      background: var(--typography-anchor-background-color);
     }
   }
 `
