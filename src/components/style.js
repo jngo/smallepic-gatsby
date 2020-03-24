@@ -86,11 +86,6 @@ const Style = createGlobalStyle`
       background: ${tokens.typography.backgroundColor};
     }
   }
-
-  header + section, section + section, section + footer 
-  {
-    margin-top: ${modularScale(31)};
-  }
 `
 
 export { Style as default }

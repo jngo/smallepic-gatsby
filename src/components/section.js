@@ -20,11 +20,6 @@ const Section = styled.section`
       }
     }
   }
-
-  & + &
-  {
-    margin-top: ${modularScale(31)};
-  }
 `
 
 export { Section as default }

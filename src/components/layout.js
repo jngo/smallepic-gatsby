@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Masthead from "../components/masthead"
 import Footer from "../components/footer"
+import Stack from "../components/stack"
 import Style from "../components/style"
 
 export default ({ children }) => {
@@ -26,7 +27,7 @@ export default ({ children }) => {
     `
   )
   return (
-    <>
+    <Stack as="main" modularScale="31">
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
         <meta name="title" content={data.site.siteMetadata.title} />
@@ -44,6 +45,6 @@ export default ({ children }) => {
       {children}
 
       <Footer handles={data.site.siteMetadata.handles} />
-    </>
+    </Stack>
   )
 }

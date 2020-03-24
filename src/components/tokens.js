@@ -1,12 +1,12 @@
 import ms from "modularscale-js"
 
-function modularScale(n) {
+function modularScale(increment) {
   var settings = {
     base: 1,
     ratio: 1.067,
   }
 
-  return `${ms(n, settings)}rem`
+  return `${ms(increment, settings)}rem`
 }
 
 const colors = {
