@@ -6,7 +6,7 @@ import Footer from "../components/footer"
 import Stack from "../components/stack"
 import Style from "../components/style"
 
-export default ({ children }) => {
+export default function Layout({ children }) {
   const data = useStaticQuery(
     graphql`
       query {
