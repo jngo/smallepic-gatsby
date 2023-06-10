@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-styled-components": "^4.0.0",
     "modularscale-js": "^3.0.1",
